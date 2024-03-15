@@ -3,10 +3,9 @@ import useScroll from "~/libs/hooks/use-scroll";
 import MaxWidthWrapper from "~/components/skeleton/max-width-wrapper";
 import { headerData } from "~/data/data";
 import CTA from "../atoms/CTA";
-import ToggleDarkMode from "~/components/atoms/ToggleDarkMode";
 import { Heading3 } from "../atoms/Heading3";
-import { Subtitle1 } from "../atoms/Subtitle1";
 import React from "react";
+import { Subtitle } from "~/components/atoms/Subtitle";
 
 const transparentHeaderSegments = new Set(["about", "projects"]);
 
@@ -19,19 +18,13 @@ export const Nav = () => {
         <div
             className={clsx(`sticky inset-x-0 top-0 z-30 w-full `, {
                 "border-b border-gray-200 bg-white/75 backdrop-blur-lg dark:bg-gray-900/75 dark:border-gray-700": scrolled,
-                "border-b border-gray-200 bg-white dark:bg-gray-900 dark:border-gray-700":
-                    segment && !transparentHeaderSegments.has(segment),
+                // "border-b border-gray-200 bg-white dark:bg-gray-900 dark:border-gray-700":
+                //     segment && !transparentHeaderSegments.has(segment),
             })}
         >
             <MaxWidthWrapper>
                 <div className="flex h-16 items-center justify-between">
-                    <a
-                        href={
-                            domain === "dub.sh"
-                                ? "/"
-                                : `https://dub.sh?utm_source=${domain}&utm_medium=referral&utm_campaign=custom-domain`
-                        }
-                    >
+                    <a href="http://localhost:4321" >
                         <div className="flex flex-row items-center justify-center space-x-2">
 
                             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler 
@@ -59,14 +52,12 @@ export const Nav = () => {
                             <MenuItem key={`item-${item.label}`} {...item} />
                         ))}
                         <div className="flex ml-2 w-full items-center justify-between md:w-auto">
-                            {showToggleTheme && <ToggleDarkMode />}
-
                             {actions && actions.length > 0 && (
                                 <div className="ml-4 flex w-max flex-wrap justify-end">
                                     {actions.map((callToAction, index) => (
                                         <CTA
                                             key={`item-action-${index}`}
-                                            data={callToAction as CallToAction}
+                                            callToAction={callToAction}
                                         />
                                     ))}
                                 </div>
@@ -78,13 +69,10 @@ export const Nav = () => {
             </MaxWidthWrapper>
         </div>
     )
-
 }
 
-
-
 const MenuItem = (item: MenuLink) => {
-    return <Link
+    return <a
         key={item.label}
         href={item.href || ''}
         className={` text-sm font-medium capitalize 
@@ -92,6 +80,6 @@ const MenuItem = (item: MenuLink) => {
     dark:hover:bg-gray-700 hover:bg-gray-100 rounded-full drop-shadow-sm 
     dark:text-white dark:hover:text-white`}
     >
-        <Subtitle1 props={{ text: item.label }} />
-    </Link>;
+        <Subtitle props={{ text: item.label }} />
+    </a>;
 }
