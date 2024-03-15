@@ -1,4 +1,6 @@
 
+import React from 'react';
+
 type Icon = React.ComponentType<React.ComponentProps<'svg'>>;
 
 export type LinkOrButton = {

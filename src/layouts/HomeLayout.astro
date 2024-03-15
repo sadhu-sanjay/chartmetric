@@ -6,7 +6,7 @@ import {Nav} from '~/components/sections/Nav'
 
 <div>
     <MobileNav client:load headerProps={headerData}  />
-    <Nav />
+    <Nav client:load />
     <slot/>
 </div>
 

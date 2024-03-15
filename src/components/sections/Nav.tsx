@@ -3,7 +3,7 @@ import useScroll from "~/libs/hooks/use-scroll";
 import MaxWidthWrapper from "~/components/skeleton/max-width-wrapper";
 import { headerData } from "~/data/data";
 import CTA from "../atoms/CTA";
-import { Heading3 } from "../atoms/Heading3";
+import { Heading3 } from "~/components/atoms/Heading3";
 import { Subtitle } from "~/components/atoms/Subtitle";
 import type { MenuLink } from "~/shared/types";
 
@@ -11,7 +11,7 @@ const transparentHeaderSegments = new Set(["about", "projects"]);
 
 export const Nav = () => {
 
-    const scrolled = useScroll(96);
+    const scrolled = useScroll(0);
     const { links, actions, isSticky, showToggleTheme, showRssFeed, position } = headerData;
 
     return (
@@ -55,10 +55,7 @@ export const Nav = () => {
                             {actions && actions.length > 0 && (
                                 <div className="ml-4 flex w-max flex-wrap justify-end">
                                     {actions.map((callToAction, index) => (
-                                        <CTA
-                                            key={`item-action-${index}`}
-                                            callToAction={callToAction}
-                                        />
+                                        <h1 key={index}>Sanjay</h1>
                                     ))}
                                 </div>
                             )}

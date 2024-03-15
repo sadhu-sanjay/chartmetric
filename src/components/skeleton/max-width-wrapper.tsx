@@ -1,11 +1,11 @@
-import { ReactNode } from "react";
+import React from "react";
 
 export default function MaxWidthWrapper({
   className,
   children,
 }: {
   className?: string;
-  children: ReactNode;
+  children: React.ReactNode;
 }) {
   return (
     <div
