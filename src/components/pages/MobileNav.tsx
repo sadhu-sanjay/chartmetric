@@ -2,21 +2,19 @@
 import { motion } from 'framer-motion';
 import { useEffect, useMemo, useRef, useState } from "react";
 // import ToggleDarkMode from '../atoms/ToggleDarkMode';
-import CTA from '@/components/atoms/CTA';
-import { CallToAction } from '@/shared/types';
-// import { Heading3 } from '../atoms/Heading3';
+import CTA from '~/components/atoms/CTA';
+import type { CallToActionType, LinkOrButton } from '~/shared/types';
+import { Heading3 } from '~/components/atoms/Heading3';
 import { useCycle } from 'framer-motion';
-import { HeaderProps } from '@/shared/types';
+import type { HeaderProps } from '~/shared/types';
 
 
-export const MobileNav: React.FC<HeaderProps> = ({headerData}) => {
+export const MobileNav = ({headerProps}: {headerProps: HeaderProps}) => {
 
     const [isOpen, toggleOpen] = useCycle(false, true);
     const containerRef = useRef(null);
     const [height, setHeight] = useState(0);
-    const { links, actions, isSticky, showToggleTheme, showRssFeed, position } = headerData;
-    
-    console.log("Sanjay -=", headerData)
+    const { links, actions, isSticky, showToggleTheme, showRssFeed, position } = headerProps
 
     return (
         <motion.nav
@@ -35,7 +33,7 @@ export const MobileNav: React.FC<HeaderProps> = ({headerData}) => {
             <motion.ul
                 variants={variants}
                 className="absolute grid w-full gap-3 px-10 py-16 `" >
-                {headerData.links?.map(({ href, label, icon: Icon }, index) => (
+                {links?.map(({ href, label, icon: Icon }, index) => (
                     <div key={index} className='grid gap-3'>
                         <MenuItem >
                             <a
@@ -47,7 +45,7 @@ export const MobileNav: React.FC<HeaderProps> = ({headerData}) => {
                                 dark:focus:ring w-full font-semibold capitalize"
                                 onClick={() => toggleOpen()}>
                                 {/* {Icon && <Icon />} */}
-                                {/*<Heading3 text={label} /> */}
+                                <Heading3 text={label} /> 
                                 <h1>{label}</h1>
                             </a>
                         </MenuItem>
@@ -68,7 +66,7 @@ export const MobileNav: React.FC<HeaderProps> = ({headerData}) => {
                             {actions.map((callToAction, index) => (
                                 <CTA
                                     key={`item-action-${index}`}
-                                    data={callToAction as CallToAction}
+                                    callToAction={callToAction}
                                 />
                             ))}
                         </div>
@@ -93,7 +91,7 @@ const variants = {
 
 const sidebar = {
     open: (height = 1000) => ({
-        clipPath: `circle(${height * 2 + 200}px at 100% 0)`,
+        clipPath: `square`,
         transition: {
             type: "spring",
             stiffness: 20,
@@ -101,7 +99,7 @@ const sidebar = {
         },
     }),
     closed: {
-        clipPath: "circle(0px at 100% 0)",
+        clipPath: `square`,
         transition: {
             type: "spring",
             stiffness: 400,

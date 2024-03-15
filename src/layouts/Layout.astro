@@ -16,7 +16,9 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class={`bg-gradient-to-r from-slate-200
+		to-slate-300 dark:bg-gradient-to-l dark:from-slate-800
+		 dark:to-slate-900`} >
 		<slot />
 	</body>
 </html>
@@ -49,3 +51,4 @@ const { title } = Astro.props;
 			monospace;
 	}
 </style>
+

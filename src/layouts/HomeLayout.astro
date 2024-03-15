@@ -1,11 +1,12 @@
 ---
-import { MobileNav } from '@/components/pages/MobileNav.tsx'
-import { headerData } from '@/data/data.ts'
+import { MobileNav } from '~/components/pages/MobileNav.tsx'
+import { headerData } from '~/data/data.ts'
+import {Nav} from '~/components/sections/Nav'
 ---
 
 <div>
-    <h1 class="font-bold text-lg "> { headerData } </h1>
-    <MobileNav client:load headerData={headerData}  />
+    <MobileNav client:load headerProps={headerData}  />
+    <Nav />
     <slot/>
 </div>
 

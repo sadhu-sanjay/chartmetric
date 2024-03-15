@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": "/home/sanjay/projects/web/chartmetric",
     "paths": {
-      "@/*": [
+      "~/*": [
         "src/*"
       ]
     },

@@ -1,11 +1,17 @@
 import React, { type FunctionComponent }  from 'react'
 
+export type LinkOrButton = {
+  callToAction?: CallToActionType;
+  containerClass?: string;
+  linkClass?: string;
+  iconClass?: string;
+};
 
 interface Grid1ItemProps {
     image?: ChicaneImage
     title?: TextProps
     subtitle?: TextProps
-    actions?: Array<CallToAction>
+    actions?: Array<CallToActionType>
 }
 
 interface TwoColumnImageTextProps {
@@ -14,19 +20,22 @@ interface TwoColumnImageTextProps {
     image?: ChicaneImage
 }
 
-interface FeatureProps {
+export interface FeatureProps {
     actionSection: ActionSectionProps;
     image?: ChicaneImage;
 }
-interface ActionSectionProps {
+
+export interface ActionSectionProps {
     twoText: DoubleTextProps;
-    actions: Array<CallToAction>;
+    actions: Array<CallToActionType>;
 }
-interface DoubleTextProps {
+
+export interface DoubleTextProps {
     title?: TextProps
     subtitle?: TextProps
 }
-interface TextProps {
+
+export interface TextProps {
     textClassNames?: string
     text?: string
     color?: string
@@ -34,7 +43,8 @@ interface TextProps {
     fontSize?: TailWindTextSizes
     alignment?: TailWindTextAlign
 }
-interface ChicaneImage {
+
+export interface ChicaneImage {
     url?: string
     alt?: string
     width?: string
@@ -53,28 +63,26 @@ interface Link {
     icon?: FunctionComponent<React.SVGProps<SVGSVGElement>>,
 }
 
-interface MenuLink extends Link {
+export interface MenuLink extends Link {
     links?: Array<Link>
 }
+type Icon = React.ComponentType<React.ComponentProps<'svg'>>;
 
-interface CallToAction {
-    text: string;
-    href?: string;
-    icon?: FunctionComponent<React.SVGProps<SVGSVGElement>>,
-    targetBlank?: boolean;
-    btnText?: 'uppercase' | 'capitalize'
-    btnType?: 'primary' | 'secondary'
-}
+export type CallToActionType = {
+  text?: string;
+  href: string;
+  icon?: Icon;
+  targetBlank?: boolean;
+};
 
 export interface HeaderProps {
     links?: Array<MenuLink>;
-    actions?: Array<CallToAction>;
+    actions?: Array<CallToActionType>;
     isSticky?: boolean;
     showToggleTheme: boolean;
     showRssFeed?: boolean;
     position: 'left' | 'right' | 'center';
 }
-
 
 // TailWind Types
 type TailWindTextSizes = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl' | 'text-5xl' | 'text-6xl' | 'text-7xl' | 'text-8xl' | 'text-9xl'

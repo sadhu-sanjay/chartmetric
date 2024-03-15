@@ -1,14 +1,14 @@
-import { IconChevronDown } from '@/components/icons/chevron-down-icon.tsx'
-import { IconHome2 } from '@/components/icons/icon-home.tsx'
+import { IconChevronDown } from '~/icons/chevron-down-icon'
+import IconHome from '~/icons/icon-home'
 
-import frontImage from '@/../public/img1.jpg'
+import frontImage from '~/../public/img1.jpg'
 
-import {
+import type {
     DoubleTextProps,
     FeatureProps,
     HeaderProps,
     ActionSectionProps
-} from '@/types/types'
+} from '~/shared/types'
 
 
 export const assetData = [
@@ -222,7 +222,7 @@ export const headerData: HeaderProps = {
         {
             label: 'About',
             href: '/about',
-            icon: IconHome2,
+            icon: IconHome,
 
         },
 
