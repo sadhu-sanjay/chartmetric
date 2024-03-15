@@ -6,6 +6,7 @@ import CTA from "../atoms/CTA";
 import { Heading3 } from "../atoms/Heading3";
 import React from "react";
 import { Subtitle } from "~/components/atoms/Subtitle";
+import type { MenuLink } from "~/shared/types";
 
 const transparentHeaderSegments = new Set(["about", "projects"]);
 
