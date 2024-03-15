@@ -4,7 +4,6 @@ import MaxWidthWrapper from "~/components/skeleton/max-width-wrapper";
 import { headerData } from "~/data/data";
 import CTA from "../atoms/CTA";
 import { Heading3 } from "../atoms/Heading3";
-import React from "react";
 import { Subtitle } from "~/components/atoms/Subtitle";
 import type { MenuLink } from "~/shared/types";
 

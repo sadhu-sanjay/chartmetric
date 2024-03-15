@@ -1,4 +1,5 @@
-import React, { type FunctionComponent }  from 'react'
+
+type Icon = React.ComponentType<React.ComponentProps<'svg'>>;
 
 export type LinkOrButton = {
   callToAction?: CallToActionType;
@@ -60,13 +61,12 @@ interface Link {
     label?: string
     href?: string
     ariaLabel?: string
-    icon?: FunctionComponent<React.SVGProps<SVGSVGElement>>,
+    icon?: Icon
 }
 
 export interface MenuLink extends Link {
     links?: Array<Link>
 }
-type Icon = React.ComponentType<React.ComponentProps<'svg'>>;
 
 export type CallToActionType = {
   text?: string;
