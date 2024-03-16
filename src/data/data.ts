@@ -213,36 +213,31 @@ export const headerData: HeaderProps = {
             ]
         },
         {
-            label: 'Assets',
-            href: '/assets',
-            icon: IconChevronDown,
+            label: 'Use Cases',
+            href: '/usecases',
+            icon: IconHome,
         },
         {
-            label: 'About',
-            href: '/about',
+            label: 'Resources',
+            href: '/resources',
             icon: IconHome,
 
+        },
+        {
+            label: 'Pricing',
+            href: '/pricing',
+            icon: IconHome,
         },
 
     ],
     actions: [
         {
-            text: 'Product',
+            text: 'Sign In',
             href: 'https://github.com/onwidget/tailnext',
             targetBlank: true,
         },
         {
-            text: 'Use Cases',
-            href: 'https://github.com/onwidget/tailnext',
-            targetBlank: true,
-        },
-        {
-            text: 'Resources',
-            href: 'https://github.com/onwidget/tailnext',
-            targetBlank: true,
-        },
-        {
-            text: 'Pricing',
+            text: 'Get Started',
             href: 'https://github.com/onwidget/tailnext',
             targetBlank: true,
         },

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export const Subtitle = (props: any) => {
 
-    const { text, alignment, className } = props
+    const { text, alignment, className, children } = props
 
     return (
         <motion.div
@@ -21,7 +21,7 @@ export const Subtitle = (props: any) => {
             break-words overflow-visible relative font-medium font-sans
             text-gray-500 leading-6 dark:text-gray-200 text-base`
             }>
-                {text}
+                {children}
             </div>
         </motion.div>
     )
