@@ -1,12 +1,15 @@
 ---
-import { MobileNav } from '~/components/pages/MobileNav.tsx'
-import { headerData } from '~/data/data.ts'
-import {Nav} from '~/components/sections/Nav'
+import { MobileNav } from "~/components/pages/MobileNav.tsx";
+import { headerData } from "~/data/data.ts";
+import { Nav } from "~/components/sections/Nav";
 ---
 
-<div>
-    <MobileNav client:load headerProps={headerData}  />
+<div
+    class={`bg-gradient-to-r from-slate-201
+    to-slate-301 dark:bg-gradient-to-l dark:from-slate-800
+     dark:to-slate-901 w-full h-full`}
+>
+    <!-- <MobileNav client:load headerProps={headerData} /> -->
     <Nav client:load />
-    <slot/>
+    <slot />
 </div>
-

@@ -8,10 +8,10 @@ const CTA = ({ callToAction, containerClass, linkClass, iconClass }: LinkOrButto
   return (
     <>
       {href && (text || Icon) && (
-        <div className={twMerge('flex w-auto cursor-pointer', containerClass)}>
+        <div className={twMerge('flex w-auto cursor-pointer btn-tertiary', containerClass)}>
           {targetBlank ? (
             <a
-              className={twMerge('inline-flex items-center justify-center w-full sm:mb-0', linkClass)}
+              className={twMerge(' inline-flex items-center justify-center w-full sm:mb-0', linkClass)}
               href={href}
               target="_blank"
               rel="noopener noreferrer"

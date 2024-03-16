@@ -17,13 +17,13 @@ export const Nav = () => {
     return (
         <div
             className={clsx(`sticky inset-x-0 top-0 z-30 w-full `, {
-                "border-b border-gray-200 bg-white/75 backdrop-blur-lg dark:bg-gray-900/75 dark:border-gray-700": scrolled,
+                "border-b border-gray-200 bg-white/75 backdrop-blur-lg dark:bg-gray-900/75 dark:border-gray-700": !scrolled,
                 // "border-b border-gray-200 bg-white dark:bg-gray-900 dark:border-gray-700":
                 //     segment && !transparentHeaderSegments.has(segment),
             })}
         >
             <MaxWidthWrapper>
-                <div className="flex h-16 items-center justify-between">
+                <div className="flex h-16 items-center ">
                     <a href="http://localhost:4321" >
                         <div className="flex flex-row items-center justify-center space-x-2">
 
@@ -34,8 +34,8 @@ export const Nav = () => {
                                 <path d="M9.183 6.117a6 6 0 1 0 4.511 3.986" />
                                 <path d="M14.813 17.883a6 6 0 1 0 -4.496 -3.954" />
                             </svg>
-
-                            <h1 className="dark:text-white text-gray-800  text-2xl font-bold"> Chicane</h1>
+                            
+                            <h1 className="dark:text-white text-gray-800  text-2xl font-bold"> Shicane</h1>
                         </div>
                         {/* <Image
                             src="/_static/logotype.svg"
@@ -55,7 +55,7 @@ export const Nav = () => {
                             {actions && actions.length > 0 && (
                                 <div className="ml-4 flex w-max flex-wrap justify-end">
                                     {actions.map((callToAction, index) => (
-                                        <h1 key={index}>Sanjay</h1>
+                                        <CTA callToAction={callToAction} key={index} />
                                     ))}
                                 </div>
                             )}

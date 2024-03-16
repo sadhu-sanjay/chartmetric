@@ -1,5 +1,7 @@
 ---
 import '~/assets/styles/tailwind.css'
+import '~/components/CustomStyles.astro'
+
 
 interface Props {
 	title: string;
@@ -17,9 +19,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class={`bg-gradient-to-r from-slate-200
-		to-slate-300 dark:bg-gradient-to-l dark:from-slate-800
-		 dark:to-slate-900`} >
+	<body >
 		<slot />
 	</body>
 </html>

@@ -131,16 +131,14 @@ export const twoColumnImageTextData: FeatureProps = {
         },
         actions: [
             {
-                text: 'Download ',
+                text: 'Download',
                 href: 'https://github.com/onwidget/tailnext',
                 targetBlank: true,
-                btnType: 'primary',
             },
             {
                 text: 'Read More',
                 href: 'https://github.com/onwidget/tailnext',
                 targetBlank: true,
-                btnType: 'secondary',
             }
         ]
     },
@@ -229,10 +227,24 @@ export const headerData: HeaderProps = {
     ],
     actions: [
         {
-            text: 'Download',
+            text: 'Product',
             href: 'https://github.com/onwidget/tailnext',
             targetBlank: true,
-            btnType: 'primary',
+        },
+        {
+            text: 'Use Cases',
+            href: 'https://github.com/onwidget/tailnext',
+            targetBlank: true,
+        },
+        {
+            text: 'Resources',
+            href: 'https://github.com/onwidget/tailnext',
+            targetBlank: true,
+        },
+        {
+            text: 'Pricing',
+            href: 'https://github.com/onwidget/tailnext',
+            targetBlank: true,
         },
     ],
     isSticky: true,
