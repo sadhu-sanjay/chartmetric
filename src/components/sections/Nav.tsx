@@ -25,20 +25,18 @@ export const Nav = () => {
             })}
         >
             <MaxWidthWrapper>
-                <div className="flex h-16 items-center justify-between">
-                    <a href="http://localhost:4321" >
-                        <div className="flex flex-row items-center justify-center space-x-2">
-
-                            {/* <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler 
+                <div className="flex h-16 items-center justify-between ">
+                    <a href="http://localhost:4321">
+                        {/* <div className="flex flex-row items-center justify-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler 
                             icon-tabler-circles-relation" width="44" height="44" viewBox="0 0 24 24"
                                 strokeWidth="1.5" stroke="#2c3e50" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <path d="M9.183 6.117a6 6 0 1 0 4.511 3.986" />
                                 <path d="M14.813 17.883a6 6 0 1 0 -4.496 -3.954" />
-                            </svg> */}
-                            
-                            {/* <h1 className="dark:text-white text-gray-800  text-2xl font-bold"> Shicane</h1> */}
-                        </div>
+                            </svg>
+                            <h1 className="dark:text-white text-gray-800  text-2xl font-bold"> Shicane</h1>
+                        </div> */}
                         {/* <Image
                             src="/_static/logotype.svg"
                             alt="logo "
@@ -46,25 +44,23 @@ export const Nav = () => {
                             height={236}
                             className="w-24"
                         /> */}
-                        <img src={logo.src} />
-
+                        <img className="w-full h-full" src={logo.src} />
                     </a>
 
-                    <div className="hidden items-center  sm:flex ">
+                    <div className="hidden items-center justify-between sm:flex ">
                         {headerData.links?.map((item) => (
                             <MenuItem key={`item-${item.label}`} {...item} />
                         ))}
+                        </div>
                         <div className="flex ml-2 w-full items-center justify-between md:w-auto">
                             {actions && actions.length > 0 && (
-                                <div className="ml-4 flex w-max flex-wrap justify-end">
+                                <div className="ml-4 flex w-max flex-wrap justify-end gap-2">
                                     {actions.map((callToAction, index) => (
-                                        <CTA callToAction={callToAction} key={index} />
+                                        <CTA callToAction={callToAction} key={index} linkClass={callToAction.linkclass} />
                                     ))}
                                 </div>
                             )}
                         </div>
-
-                    </div>
                 </div>
             </MaxWidthWrapper>
         </div>

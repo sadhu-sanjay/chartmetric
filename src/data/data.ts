@@ -235,11 +235,13 @@ export const headerData: HeaderProps = {
             text: 'Sign In',
             href: 'https://github.com/onwidget/tailnext',
             targetBlank: true,
+            linkclass: 'btn-primary'
         },
         {
             text: 'Get Started',
             href: 'https://github.com/onwidget/tailnext',
             targetBlank: true,
+            linkclass: 'btn-secondary'
         },
     ],
     isSticky: true,

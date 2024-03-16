@@ -75,6 +75,7 @@ export type CallToActionType = {
   href: string;
   icon?: Icon;
   targetBlank?: boolean;
+  linkclass?: string;
 };
 
 export interface HeaderProps {
